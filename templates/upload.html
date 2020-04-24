@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
  <head>
    <title>Upload Image</title>
 
@@ -40,22 +40,26 @@
        <th>Date</th>
        <th>In Time</th>
        <th>Staff</th>
+       <th>Out Date</th>
        <th>Out Time</th>
      </tr>
+     {% for veh in all_vehicles %}
      <tr>
+       <td>{{ veh['Vehicle Number'] }}</td>
+       <td>{{ veh['Date'] }}</td>
+       <td>{{ veh['In time'] }}</td>
+       <td>{{ veh['Managed by'] }}</td>
+       <td>{{ veh['Out date'] }}</td>
+       <td>{{ veh['Out time'] }}</td>
+     </tr>
+     {% endfor %}
+ <!--    <tr>
        <td>hey</td>
        <td>1</td>
        <td>1234</td>
        <td>me</td>
        <td>dff</td>
-     </tr>
-     <tr>
-       <td>hey</td>
-       <td>1</td>
-       <td>1234</td>
-       <td>me</td>
-       <td>dff</td>
-     </tr>
+     </tr> -->
    </table>
  </body>
 </html>

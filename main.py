@@ -48,7 +48,6 @@ def upload_page():
         if file and allowed_file(file.filename):
 
             # call the OCR function on it
-            extracted_text = ocr_core(file)
 
             dateTimeObj = datetime.now()
 
@@ -58,12 +57,25 @@ def upload_page():
 
             user_collection = mongo.db.users
 
-            user_collection.insert({'Vehicle Number' : extracted_text,'Date' : dateStr,'In time' : timeStr,'Managed by' : manager})
+            extracted_text = ocr_core(file)
+
+            exit = user_collection.find_one({'Vehicle Number' : extracted_text})
+
+            if exit is None:
+                user_collection.insert({'Vehicle Number' : extracted_text,'Date' : dateStr,'In time' : timeStr,'Managed by' : manager,'Out date' : '','Out time' : ''})
+            else:
+                exit["Out date"] = dateStr
+                exit["Out time"] = timeStr
+                user_collection.save(exit)
+
+            all_veh = mongo.db.users.find()
 
             # extract the text and display it
             return render_template('upload.html',
                                    msg='Successfully processed',
                                    extracted_text=extracted_text,
-                                   img_src=UPLOAD_FOLDER + file.filename)
+                                   img_src=UPLOAD_FOLDER + file.filename,
+                                   all_vehicles = all_veh)
     elif request.method == 'GET':
-        return render_template('upload.html')
+        all_veh = mongo.db.users.find()
+        return render_template('upload.html',all_vehicles = all_veh)
