@@ -6,6 +6,8 @@ from flask import Flask, render_template, request,Blueprint
 
 from .extensions import mongo
 
+from datetime import datetime
+
 main = Blueprint('main', __name__)
 
 
@@ -36,20 +38,27 @@ def upload_page():
     if request.method == 'POST':
         # check if there is a file in the request
         if 'file' not in request.files:
-            return render_template('index.html', msg='No file selected')
+            return render_template('upload.html', msg='No file selected')
         file = request.files['file']
+        manager = request.form['Man_name']
         # if no file is selected
         if file.filename == '':
-            return render_template('index.html', msg='No file selected')
+            return render_template('upload.html', msg='No file selected')
 
         if file and allowed_file(file.filename):
 
             # call the OCR function on it
             extracted_text = ocr_core(file)
 
+            dateTimeObj = datetime.now()
+
+            dateStr = dateTimeObj.strftime("%d %b %Y ")
+
+            timeStr = dateTimeObj.strftime("%I:%M %p")
+
             user_collection = mongo.db.users
 
-            user_collection.insert({'name' : extracted_text})
+            user_collection.insert({'Vehicle Number' : extracted_text,'Date' : dateStr,'In time' : timeStr,'Managed by' : manager})
 
             # extract the text and display it
             return render_template('upload.html',
@@ -57,4 +66,4 @@ def upload_page():
                                    extracted_text=extracted_text,
                                    img_src=UPLOAD_FOLDER + file.filename)
     elif request.method == 'GET':
-        return render_template('index.html')
+        return render_template('upload.html')

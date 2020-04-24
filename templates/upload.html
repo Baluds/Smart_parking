@@ -2,6 +2,8 @@
 <html>
  <head>
    <title>Upload Image</title>
+
+   <link rel="stylesheet" type="text/css" href="static/css/up.css">
  </head>
  <body>
 
@@ -11,9 +13,13 @@
   
    <h1>Upload new File</h1>
   
-   <form method=post enctype=multipart/form-data>
+   <form method=post enctype=multipart/form-data action="{{ url_for('main.upload_page')}}">
      <p><input type=file name=file align="right">
         <input type=submit value=Upload align="right">
+      <p>
+        <label>Staff</label>
+      <input type="text" name=Man_name placeholder="Managed by" align="right">  
+                    
    </form>
 
    <h1>Result:</h1>
@@ -27,5 +33,29 @@
    {% else %}
      The extracted text will be displayed here
    {% endif %}
+
+   <table>
+     <tr>
+       <th>Vehicle number</th>
+       <th>Date</th>
+       <th>In Time</th>
+       <th>Staff</th>
+       <th>Out Time</th>
+     </tr>
+     <tr>
+       <td>hey</td>
+       <td>1</td>
+       <td>1234</td>
+       <td>me</td>
+       <td>dff</td>
+     </tr>
+     <tr>
+       <td>hey</td>
+       <td>1</td>
+       <td>1234</td>
+       <td>me</td>
+       <td>dff</td>
+     </tr>
+   </table>
  </body>
 </html>
