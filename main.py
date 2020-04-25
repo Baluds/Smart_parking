@@ -41,6 +41,7 @@ def upload_page():
             return render_template('upload.html', msg='No file selected')
         file = request.files['file']
         manager = request.form['Man_name']
+        space_no = request.form['space_name']
         # if no file is selected
         if file.filename == '':
             return render_template('upload.html', msg='No file selected')
@@ -62,7 +63,7 @@ def upload_page():
             exit = user_collection.find_one({'Vehicle Number' : extracted_text})
 
             if exit is None:
-                user_collection.insert({'Vehicle Number' : extracted_text,'Date' : dateStr,'In time' : timeStr,'Managed by' : manager,'Out date' : '','Out time' : ''})
+                user_collection.insert({'Vehicle Number' : extracted_text,'Parking Lot' : space_no,'Date' : dateStr,'In time' : timeStr,'Managed by' : manager,'Out date' : '','Out time' : ''})
             else:
                 exit["Out date"] = dateStr
                 exit["Out time"] = timeStr
@@ -79,3 +80,9 @@ def upload_page():
     elif request.method == 'GET':
         all_veh = mongo.db.users.find()
         return render_template('upload.html',all_vehicles = all_veh)
+
+
+
+@main.route('/emp', methods=['GET', 'POST'])
+def emp_page():
+    if request.method == 'POST':

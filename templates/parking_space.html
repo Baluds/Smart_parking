@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Parking Lot Details</title>
+
+  <link rel="stylesheet" type="text/css" href="static/css/up.css">
+ </head>
+ <body>
+<!--<form method=post enctype=multipart/form-data action="{{ url_for('main.emp_page')}}">
+     
+      <p>
+        <label>Employee ID</label>
+      <input type="text" name=emp_id placeholder="ID" align="right">  
+      <label>Employee Vehicle Number</label>
+      <input type="text" name=emp_veh placeholder="Vehicle Number" align="right">
+      <p> <input type=submit value=Upload align="right">
+                    
+   </form> -->
+
+<table>
+     <tr>
+       <th>Parking Lot</th>
+       <th>Available Slots</th>
+     </tr>
+     {% for veh in all_vehicles %}
+     <tr>
+       <td>{{ veh['Parking Lot'] }}</td>
+       <td>{{ veh['Slots'] }}</td>
+     </tr>
+     {% endfor %}
+ <!--    <tr>
+       <td>hey</td>
+       <td>1</td>
+       <td>1234</td>
+       <td>me</td>
+       <td>dff</td>
+     </tr> -->
+   </table>
+
+ </body>
+ </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Employee Details</title>
+
+  <link rel="stylesheet" type="text/css" href="static/css/up.css">
+ </head>
+ <body>
+<form method=post enctype=multipart/form-data action="{{ url_for('main.emp_page')}}">
+     
+      <p>
+        <label>Employee ID</label>
+      <input type="text" name=emp_id placeholder="ID" align="right">  
+      <label>Employee Vehicle Number</label>
+      <input type="text" name=emp_veh placeholder="Vehicle Number" align="right">
+      <p> <input type=submit value=Upload align="right">
+                    
+   </form>
+
+<table>
+     <tr>
+       <th>Employee ID</th>
+       <th>Employee Vehicle</th>
+       <th>In Date</th>
+       <th>In Time</th>
+       <th>Out Date</th>
+       <th>Out Time</th>
+     </tr>
+     {% for veh in all_vehicles %}
+     <tr>
+       <td>{{ veh['Employee ID'] }}</td>
+       <td>{{ veh['Employee Vehicle'] }}</td>
+       <td>{{ veh['In Date'] }}</td>
+       <td>{{ veh['In time'] }}</td>
+       <td>{{ veh['Out date'] }}</td>
+       <td>{{ veh['Out time'] }}</td>
+     </tr>
+     {% endfor %}
+ <!--    <tr>
+       <td>hey</td>
+       <td>1</td>
+       <td>1234</td>
+       <td>me</td>
+       <td>dff</td>
+     </tr> -->
+   </table>
+
+ </body>
+ </html>

@@ -19,6 +19,8 @@
       <p>
         <label>Staff</label>
       <input type="text" name=Man_name placeholder="Managed by" align="right">  
+      <label>Enter Parking Lot Number</label>
+      <input type="text" name=space_name placeholder="Parking lot" align="right">
                     
    </form>
 
@@ -37,6 +39,7 @@
    <table>
      <tr>
        <th>Vehicle number</th>
+       <th>Parking Lot</th>
        <th>Date</th>
        <th>In Time</th>
        <th>Staff</th>
@@ -46,6 +49,7 @@
      {% for veh in all_vehicles %}
      <tr>
        <td>{{ veh['Vehicle Number'] }}</td>
+       <td>{{ veh['Parking Lot'] }}</td>
        <td>{{ veh['Date'] }}</td>
        <td>{{ veh['In time'] }}</td>
        <td>{{ veh['Managed by'] }}</td>
