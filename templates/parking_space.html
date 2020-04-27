@@ -22,10 +22,10 @@
        <th>Parking Lot</th>
        <th>Available Slots</th>
      </tr>
-     {% for veh in all_vehicles %}
+     {% for pk in pk_details %}
      <tr>
-       <td>{{ veh['Parking Lot'] }}</td>
-       <td>{{ veh['Slots'] }}</td>
+       <td>{{ pk['Lot Name'] }}</td>
+       <td>{{ pk['Space left'] }}</td>
      </tr>
      {% endfor %}
  <!--    <tr>

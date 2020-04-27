@@ -9,31 +9,37 @@
 <form method=post enctype=multipart/form-data action="{{ url_for('main.emp_page')}}">
      
       <p>
-        <label>Employee ID</label>
-      <input type="text" name=emp_id placeholder="ID" align="right">  
+        <label>Employee Name</label>
+      <input type="text" name=emp_name placeholder="Name" align="right">  
+       <label>Employee ID</label>
+      <input type="text" name=emp_id placeholder="ID" align="right"> 
       <label>Employee Vehicle Number</label>
       <input type="text" name=emp_veh placeholder="Vehicle Number" align="right">
-      <p> <input type=submit value=Upload align="right">
+      <p> <input type=submit value="Sign in" align="right">
+ <p> <input type=submit value="Sign out" align="right">
                     
    </form>
+
 
 <table>
      <tr>
        <th>Employee ID</th>
+       <th>Employee Name</th>
        <th>Employee Vehicle</th>
        <th>In Date</th>
        <th>In Time</th>
        <th>Out Date</th>
        <th>Out Time</th>
      </tr>
-     {% for veh in all_vehicles %}
+     {% for em in emp_details %}
      <tr>
-       <td>{{ veh['Employee ID'] }}</td>
-       <td>{{ veh['Employee Vehicle'] }}</td>
-       <td>{{ veh['In Date'] }}</td>
-       <td>{{ veh['In time'] }}</td>
-       <td>{{ veh['Out date'] }}</td>
-       <td>{{ veh['Out time'] }}</td>
+       <td>{{ em['Employee ID'] }}</td>
+       <td>{{ em['Employee Name'] }}</td>
+       <td>{{ em['Employee Vehicle'] }}</td>
+       <td>{{ em['In Date'] }}</td>
+       <td>{{ em['In time'] }}</td>
+       <td>{{ em['Out date'] }}</td>
+       <td>{{ em['Out time'] }}</td>
      </tr>
      {% endfor %}
  <!--    <tr>
