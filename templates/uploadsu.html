@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Upload Image</title>
+
+   <link rel="stylesheet" type="text/css" href="static/css/up.css">
+ </head>
+ <body>
+
+   <!--{% if msg %}
+   <h1>{{ msg }}</h1>
+   {% endif %}-->
+  
+   <h1>Upload new File</h1>
+  
+   <form method=post enctype=multipart/form-data action="{{ url_for('main.uploadsu')}}">
+     <p><input type=file name=file align="right">
+        <input type=submit value="Submit" align="right">
+      <p>  
+        <label>Enter Vehicle number</label>
+      <input type="text" name=veh2 placeholder="Number" align="right">
+      <label>Enter Amount</label>
+      <input type="text" name=amount placeholder="In Rs" align="right">
+      <label>Enter Payment method</label>
+      <input type="text" name=pay_m placeholder="method" align="right">
+
+                    
+   </form>
+
+   <!--<h1>Result:</h1>
+   {% if img_src %}
+     <img src="{{ img_src }}">
+   {% endif %}
+  
+   {% if extracted_text %}
+     <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+  
+   {% else %}
+     The extracted text will be displayed here
+   {% endif %}-->
+
+   <table>
+     <tr>
+       <th>Vehicle number</th>
+       <th>Vehicle type</th>
+       <th>Amount</th>
+       <th>Payment method</th>
+     </tr>
+     {% for ty in typo %}
+     <tr>
+       <td>{{ ty['Vehicle Number'] }}</td>
+       <td>{{ ty['Vehicle type'] }}</td>
+       <td>{{ ty['Amount'] }}</td>
+       <td>{{ ty['Payment method'] }}</td>
+     </tr>
+     {% endfor %}
+ <!--    <tr>
+       <td>hey</td>
+       <td>1</td>
+       <td>1234</td>
+       <td>me</td>
+       <td>dff</td>
+     </tr> -->
+   </table>
+ </body>
+</html>
