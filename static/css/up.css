@@ -299,3 +299,21 @@ width: 100%;
 
 
 }
+
+
+.fit{
+
+
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  font-size: 25px;
+}
+
+.bgg{
+
+   background-color: grey;
+    position: absolute;
+  }
+    

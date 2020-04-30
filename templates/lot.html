@@ -4,10 +4,26 @@
    <title>Parking Lot Details</title>
 
   <link rel="stylesheet" type="text/css" href="static/css/up.css">
+
+<style>
+     
+
+ body {
+  background-image: url('static/images/b2.jpg');
+
+
+}  
+  
+
+   </style>
+
  </head>
  <body>
-
-<!--<table>
+  <nav>
+  <p><button style="float: right;font-size: 22px;" class="form-submit-button" onclick="window.location.href = 'upload';"><span>Home</span>    </button></p>
+</nav>
+<h1><span class="hdr">Park</span><span class="lft">ing </span><span class="hdr">Lo</span><span class="lft">t</span></h1>
+<table class="center" >
      <tr>
        <th>Parking Lot</th>
        <th>Available Slots</th>
@@ -19,59 +35,15 @@
      </tr>
      {% endfor %}
 
-   </table>-->
-
-<div class="st" >
-  <div style="float: left;width: 24%;background-position: bottom;text-align: " >one</div>
-  <div style="float: left;width: 24%;background-position: bottom;"  >two</div>
-  <div style="float: right;width: 24%;background-position: bottom;"  >three</div>
-  <div style="float: right;width: 24%;background-position: bottom;"  >four</div>
+   </table>
+<footer>
+   <div>
+    <h2 style="color: #54a7de;text-align: center;font-size:40px;" >About</h2>
+    <div class="bgg" > </div>
+  <div class="fit"  > This is a Smart parking Management system built using python OCR module Tesseract which helps in automation of record storing using less man power and being time efficient</div>
 </div>
 
-<div class="cont">
-<div  style="width: 100%;" >
-    {% for pk in pk_details %}
-    <div style="float: left;width: 24%;" ><div style="text-align: center;">12</div></div>
-    {% endfor %}
-
-   <!-- <div style="float: left;width: 24%;" ><div  style="text-align: center;" >B</div></div>
-
-    <div style="float: left;width: 24%;" ><div style="text-align: center;" >C</div></div>
-
-   <div style="float: right;width: 24%;" ><div style="text-align: center;" >D</div></div>-->
-
- 
-</div>
-  <div style="float: left;width: 24%;background-color: black;border: solid black;padding: 3px;" >
-  {% for pk in pk_details %}
-  <button>{{ pk['Space left'] }}</button>
-  {% endfor %}
-  </div>
-  <div style="float: left;width: 24%;background-color: grey;border: solid black;padding: 3px;" ><button>1</button>
-  <button>2</button>
-  <button>1</button>
-  <button>2</button>
-  <button>1</button></div>
-  <div style="float: right;width: 24%;background-color: black;border: solid black;padding: 3px;" ><button>2</button>
-  <button>1</button>
-  <button>2</button>
-  <button>1</button>
-  <button>2</button></div>
-  <div style="float: right;width: 24%;background-color: grey;border: solid black;padding: 3px;" ><button>2</button>
-  <button>1</button>
-  <button>2</button>
-  <button>1</button>
-</div>
-  
-
-
-</div>
-
-<div class="nd" >
-  <span>3rd</span>
-</div>
-
-
+   </footer>
 
 
  </body>
