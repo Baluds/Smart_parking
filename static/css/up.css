@@ -145,6 +145,10 @@ border-color: grey;
   right: 0;
 }
 
+.button:hover,.button1:hover{
+  background-color: white;
+}
+
 .button1 {
   border-radius: 4px;
   background-color: #4a4d4f;
@@ -240,29 +244,58 @@ td:first-child, th:first-child {
 
 background: #4a4d4f;
 
-color: #fff;
 
-border: 1px solid black;
+border: 1px solid grey;
+
 
 border-radius: 20px;
 
-
+border-color: grey;
 text-shadow:none;
 font-size: 18px;
+color: #54a7de;
 
 }
 
 .form-submit-button:hover {
 
+color: #fff;
 
-color: #54a7de;
+border: 1px solid black;
 
-border: 1px solid grey;
 
 border-radius: 20px;
 
 
 text-shadow:none;
-border-color: grey;
+
+
+}
+
+
+.cont{
+
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  background-color: blue;
+
+}
+
+.st{
+width: 100%;
+  height: 300px;
+  overflow: auto;
+  background-color: red;
+
+
+}
+
+.nd{
+width: 100%;
+  height: 300px;
+  overflow: auto;
+  background-color: black;
+
 
 }

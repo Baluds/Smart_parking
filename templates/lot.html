@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Parking Lot Details</title>
+
+  <link rel="stylesheet" type="text/css" href="static/css/up.css">
+ </head>
+ <body>
+
+<!--<table>
+     <tr>
+       <th>Parking Lot</th>
+       <th>Available Slots</th>
+     </tr>
+     {% for pk in pk_details %}
+     <tr>
+       <td>{{ pk['Lot Name'] }}</td>
+       <td>{{ pk['Space left'] }}</td>
+     </tr>
+     {% endfor %}
+
+   </table>-->
+
+<div class="st" >
+  <div style="float: left;width: 24%;background-position: bottom;text-align: " >one</div>
+  <div style="float: left;width: 24%;background-position: bottom;"  >two</div>
+  <div style="float: right;width: 24%;background-position: bottom;"  >three</div>
+  <div style="float: right;width: 24%;background-position: bottom;"  >four</div>
+</div>
+
+<div class="cont">
+<div  style="width: 100%;" >
+    {% for pk in pk_details %}
+    <div style="float: left;width: 24%;" ><div style="text-align: center;">12</div></div>
+    {% endfor %}
+
+   <!-- <div style="float: left;width: 24%;" ><div  style="text-align: center;" >B</div></div>
+
+    <div style="float: left;width: 24%;" ><div style="text-align: center;" >C</div></div>
+
+   <div style="float: right;width: 24%;" ><div style="text-align: center;" >D</div></div>-->
+
+ 
+</div>
+  <div style="float: left;width: 24%;background-color: black;border: solid black;padding: 3px;" >
+  {% for pk in pk_details %}
+  <button>{{ pk['Space left'] }}</button>
+  {% endfor %}
+  </div>
+  <div style="float: left;width: 24%;background-color: grey;border: solid black;padding: 3px;" ><button>1</button>
+  <button>2</button>
+  <button>1</button>
+  <button>2</button>
+  <button>1</button></div>
+  <div style="float: right;width: 24%;background-color: black;border: solid black;padding: 3px;" ><button>2</button>
+  <button>1</button>
+  <button>2</button>
+  <button>1</button>
+  <button>2</button></div>
+  <div style="float: right;width: 24%;background-color: grey;border: solid black;padding: 3px;" ><button>2</button>
+  <button>1</button>
+  <button>2</button>
+  <button>1</button>
+</div>
+  
+
+
+</div>
+
+<div class="nd" >
+  <span>3rd</span>
+</div>
+
+
+
+
+ </body>
+ </html>

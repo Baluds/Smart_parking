@@ -136,7 +136,7 @@ def emp_page():
 def lot_page():
     pk_collection = mongo.db.lot
     pk_details = mongo.db.lot.find()
-    return render_template('parking_space.html',pk_details=pk_details)
+    return render_template('lot.html',pk_details=pk_details)
 
 
 @main.route('/uploadsu',methods=['GET', 'POST'])

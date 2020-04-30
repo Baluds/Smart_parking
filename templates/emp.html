@@ -4,24 +4,44 @@
    <title>Employee Details</title>
 
   <link rel="stylesheet" type="text/css" href="static/css/up.css">
+
+<style>
+     
+
+ body {
+  background-image: url('static/images/bg7.jpg');
+}  
+  
+
+   </style>
+  
  </head>
  <body>
-<form method=post enctype=multipart/form-data action="{{ url_for('main.emp_page')}}">
+
+<header>
+  <p><button style="float: right;font-size: 22px;" class="form-submit-button" onclick="window.location.href = 'upload';"><span>Home</span>    </button></p>
+</header>
+  <h1><span class="hdr">Emp</span><span class="lft">loyee </span><span class="hdr">De</span><span class="lft">tails</span></h1>
+  
+
+
+  <div class="form">
+<form class="form-inline" method=post enctype=multipart/form-data action="{{ url_for('main.emp_page')}}">
      
       <p>
-        <label>Employee Name</label>
-      <input type="text" name=emp_name placeholder="Name" align="right">  
-       <label>Employee ID</label>
-      <input type="text" name=emp_id placeholder="ID" align="right"> 
-      <label>Employee Vehicle Number</label>
-      <input type="text" name=emp_veh placeholder="Vehicle Number" align="right">
-      <p> <input type=submit value="Sign in" align="right">
- <p> <input type=submit value="Sign out" align="right">
+      <input type="text" name=emp_name placeholder="Employee Name" align="right"> </p>
+      
+    <p>  <input type="text" name=emp_id placeholder="Employee ID" align="right"> </p>
+    
+     <p> <input type="text" name=emp_veh placeholder="Employee Vehicle Number" align="right"> </p>
+     <p><input class="form-submit-button" type=submit value="Sign In" align="right"> </p>
+<p><input class="form-submit-button" type=submit value="Sign Out" align="right"> </p>
                     
    </form>
+ </div>
 
-
-<table>
+<div>
+<table class="center" >
      <tr>
        <th>Employee ID</th>
        <th>Employee Name</th>
@@ -42,14 +62,9 @@
        <td>{{ em['Out time'] }}</td>
      </tr>
      {% endfor %}
- <!--    <tr>
-       <td>hey</td>
-       <td>1</td>
-       <td>1234</td>
-       <td>me</td>
-       <td>dff</td>
-     </tr> -->
+
    </table>
+   </div>
 
  </body>
  </html>
